@@ -1,12 +1,21 @@
-from django.views.generic import DetailView, ListView
+from django.views.generic import DetailView, DeleteView, ListView, UpdateView, CreateView
 
 from .models import Joke
 
 
-# Create your views here.
+class JokeCreateView(CreateView):
+    model = Joke
+    fields = ['question', 'answer']
+
+
 class JokeDetailView(DetailView):
     model = Joke
 
 
 class JokeListView(ListView):
     model = Joke
+
+
+class JokeUpdateView(UpdateView):
+    model = Joke
+    fields = ['question', 'answer']

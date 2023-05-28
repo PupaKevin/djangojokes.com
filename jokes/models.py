@@ -4,7 +4,6 @@ from django.urls import reverse
 
 # Create your models here.
 
-
 class Joke(models.Model):
     question = models.TextField(max_length=200)
     answer = models.TextField(max_length=100, blank=True)
